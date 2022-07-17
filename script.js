@@ -60,11 +60,25 @@ const divide = function(array) {
 
     array.shift();
 
-    console.log(array);
 
     array.forEach(number => {
         result /= number;
     });
     return result;
+}
+
+const operate = function(operator, number1, number2) {
+    switch (operator.toLowerCase()) {
+        case '+':
+        return add([number1, number2]);
+        case '-':
+        return substract([number1, number2]);
+        case 'x':
+        return multiply([number1, number2]);
+        case '/':
+        return divide([number1, number2]);
+        default:
+        return;
+    }
 }
 
