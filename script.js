@@ -1,3 +1,5 @@
+numberValue = null;
+
 const add = function(array) {
     if (0 === array.length) {
         return;
@@ -80,5 +82,15 @@ const operate = function(operator, number1, number2) {
         default:
         return;
     }
+}
+
+const getNumber = (number) => {
+    if (numberValue) {
+        numberValue = numberValue.concat('', number);
+        document.getElementById("response").innerHTML = numberValue;
+        return;
+    }
+    numberValue = number;
+    document.getElementById("response").innerHTML = numberValue;
 }
 
