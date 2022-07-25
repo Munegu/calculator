@@ -80,6 +80,9 @@ const operate = function(operator, number1, number2) {
         case 'x':
         return multiply([number1, number2]);
         case '/':
+            if (0 === number2) {
+                return 'Division by 0 is impossible';
+            }
         return divide([number1, number2]);
         default:
         return;
@@ -97,8 +100,11 @@ const getNumber = (number) => {
 }
 
 const getOperator = (operator) => {
+    if (null !== operatorValue && null !== number1 && null !== numberValue) {
+        getOperation();
+    }
     operatorValue = operator;
-    number1 = null !== numberValue ? parseInt(numberValue) : 0;
+    number1 = null !== numberValue ? parseFloat(numberValue) : 0;
     numberValue = null;
     document.getElementById("response").innerHTML = numberValue;
 }
@@ -115,9 +121,10 @@ const clearAll = () => {
 }
 
 const getOperation = () => {
-    result = operate(operatorValue, number1, parseInt(numberValue));
+    result = operate(operatorValue, number1, parseFloat(numberValue));
     number1 = result;
     numberValue = result;
+    operatorValue = null;
     document.getElementById("response").innerHTML = numberValue;
 }
 
