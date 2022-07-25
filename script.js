@@ -1,4 +1,6 @@
 numberValue = null;
+operatorValue = null;
+number1 = null;
 
 const add = function(array) {
     if (0 === array.length) {
@@ -93,4 +95,30 @@ const getNumber = (number) => {
     numberValue = number;
     document.getElementById("response").innerHTML = numberValue;
 }
+
+const getOperator = (operator) => {
+    operatorValue = operator;
+    number1 = null !== numberValue ? parseInt(numberValue) : 0;
+    numberValue = null;
+    document.getElementById("response").innerHTML = numberValue;
+}
+
+const clearValue = () => {
+    numberValue = null;
+    document.getElementById("response").innerHTML = numberValue;
+}
+
+const clearAll = () => {
+    clearValue();
+    operatorValue = null;
+    document.getElementById("response").innerHTML = numberValue;
+}
+
+const getOperation = () => {
+    result = operate(operatorValue, number1, parseInt(numberValue));
+    number1 = result;
+    numberValue = result;
+    document.getElementById("response").innerHTML = numberValue;
+}
+
 

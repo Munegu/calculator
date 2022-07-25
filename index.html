@@ -16,13 +16,13 @@
 
         <!--Line 1-->
         <div class="line">
-            <button class="button-double clear">
+            <button class="button-double clear" onclick="clearAll()">
                 AC
             </button>
-            <button class="button clear">
+            <button class="button clear" onclick="clearValue()">
                 C
             </button>
-            <button class="button operator">
+            <button class="button operator" onclick="getOperator('/')">
                 /
             </button>
         </div>
@@ -38,7 +38,7 @@
             <button class="button number" onclick="getNumber('9')">
                 9
             </button>
-            <button class="button operator">
+            <button class="button operator" onclick="getOperator('+')">
                 +
             </button>
         </div>
@@ -54,7 +54,7 @@
             <button class="button number " onclick="getNumber('6')">
                 6
             </button>
-            <button class="button operator">
+            <button class="button operator" onclick="getOperator('-')">
                 -
             </button>
         </div>
@@ -70,7 +70,7 @@
             <button class="button number" onclick="getNumber('3')">
                 3
             </button>
-            <button class="button operator">
+            <button class="button operator" onclick="getOperator('*')">
                 x
             </button>
         </div>
@@ -83,7 +83,7 @@
             <button class="button number">
                 .
             </button>
-            <button class="button-double operator">
+            <button class="button-double operator" onclick="getOperation()">
                 =
             </button>
         </div>
